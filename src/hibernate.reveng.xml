@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-catalog="Usuarios_log" match-name="post" />
+	<table-filter match-catalog="Usuarios_log" match-name="usuarios" />
+	<table catalog="Usuarios_log" name="post" class="Usuarios_log.Post">
+		<column name="id"></column>
+		<column name="id_to"></column>
+		<column name="fecha"></column>
+		<column name="texto"></column>
+		<column name="id_from"></column>
+	</table>
+	<table catalog="Usuarios_log" name="usuarios" class="Usuarios_log.Usuario">
+		<column name="id"></column>
+		<column name="password"></column>
+		<column name="nombre"></column>
+	</table>
+</hibernate-reverse-engineering>

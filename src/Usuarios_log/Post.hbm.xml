@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 08-jun-2018 10:39:19 by Hibernate Tools 5.2.8.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="Usuarios_log" dynamic-insert="false" dynamic-update="false" mutable="true" name="Usuarios_log.Post" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="post">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Usuarios_log.Usuario" embed-xml="true" fetch="select" insert="true" name="usuarioByIdFrom" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="id_from" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="Usuarios_log.Usuario" embed-xml="true" fetch="select" insert="true" name="usuarioByIdTo" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="id_to" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="fecha" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="fecha" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="texto" optimistic-lock="true" type="string" unique="false">
+            <column name="texto" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
