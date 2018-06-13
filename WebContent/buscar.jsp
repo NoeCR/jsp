@@ -15,21 +15,20 @@
 	<%@ page import="org.hibernate.cfg.Configuration"%>
 	<%@ page import="org.hibernate.Query"%>
 	<%@ page import="java.util.Date" %>
+	<%@ page import="java.util.List"%>
 	<%
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		    SessionFactory sf = new Configuration().configure().buildSessionFactory();
 			Session sesion = sf.openSession();
-		    Transaction tx = sesion.beginTransaction();
-			Usuario u = (Usuario)session.getAttribute("cliente");
-			int numero = Integer.parseInt(request.getParameter("para"));	
-			Usuario u2 = (Usuario) sesion.load(Usuario.class,numero);
-			java.util.Date ahora = new java.util.Date();
-			java.util.Date fecha = new java.util.Date(ahora.getTime());
-			String texto = request.getParameter("texto");
-			Post post = new Post(u,u2,fecha,texto);
+		   
+			String inicial = request.getParameter("inicial");
 			
-			sesion.save(post);
-			tx.commit();
+			Query q = (Query) sesion.createQuery("from Post where usuarioByIdFrom.nombre like :ini");
+			q.setParameter("ini", inicial + "%");		
+			
+			List<Post> posts =  q.list();
+			
 			response.sendRedirect("bienvenido.jsp");
 	%>
+	
 </body>
 </html>

@@ -20,8 +20,8 @@
       <li class="active"><a href="#">Home</a></li>
       <li><a href="#" type="button" data-toggle="modal" data-target="#myModal">Enviar</button>
       	</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+      <li><a href="#" type="button" data-toggle="modal" data-target="#myModal2">Buscar</a></li>
+      <li><a href="index.jsp">Salir</a></li>
     </ul>
   </div>
 </nav>
